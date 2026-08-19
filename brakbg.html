@@ -821,11 +821,15 @@ body,html{overflow-x:hidden!important;max-width:100%!important}
 .nh-carousel-fullscreen__item{min-height:0!important;padding:0!important}
 .nh-carousel-fullscreen__item-wrapper{padding-top:60px!important;padding-bottom:0!important}
 .nh-carousel-fullscreen .swiper__dots{display:flex!important}
+@media(min-width:832px){
+.nh-carousel-fullscreen .swiper-wrapper{height:calc(100vh + 24px)!important}
+.nh-carousel-fullscreen .swiper-slide{height:calc(100vh + 24px)!important}
+}
 @media(max-width:831px){
 .site-background{display:none!important}
 .nh-carousel-fullscreen .swiper-wrapper{height:calc(100vh + 24px)!important}
 .nh-carousel-fullscreen .swiper-slide{height:calc(100vh + 24px)!important}
-.nh-carousel-fullscreen__item-wrapper{padding-top:123px!important;padding-bottom:40px!important}
+.nh-carousel-fullscreen__item-wrapper{align-items:start!important;padding-top:100px!important;padding-bottom:40px!important}
 }
 </style>
 <script>
