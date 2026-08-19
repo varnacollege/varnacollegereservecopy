@@ -1574,3 +1574,39 @@
  </div>
 <script>document.getElementById("client-cookies-notice-button").addEventListener("click",function(){document.getElementById("client-cookies-notice").style.display="none";});</script>
 <style>@media screen and (max-width:1023px){.site-header__burger--mobile{display:none!important}#main-menu{display:block!important}#main-menu .site-menu__list{display:block!important}.site-menu__item{display:block!important;width:100%!important}}</style>
+<style>
+/* Fix hero carousel without Swiper JS */
+.nh-carousel-fullscreen .swiper-wrapper {
+  display: block !important;
+  transform: none !important;
+  transition: none !important;
+  width: 100% !important;
+}
+.nh-carousel-fullscreen .swiper-slide {
+  display: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  flex-shrink: unset !important;
+}
+.nh-carousel-fullscreen .swiper-slide:first-child {
+  display: block !important;
+}
+.nh-carousel-fullscreen__content {
+  overflow: visible !important;
+  width: 100% !important;
+}
+.nh-carousel-fullscreen__item {
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.nh-carousel-fullscreen__container {
+  width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+body, html {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+</style>
