@@ -631,7 +631,7 @@
  <button id=client-cookies-notice-button class=client-cookies-notice__button>ОК</button>
  </div> 
  </div>
-<script>document.getElementById("client-cookies-notice-button").addEventListener("click",function(){document.getElementById("client-cookies-notice").style.display="none";});</script><style id=burger-menu-fix>
+<script>(function(){var k="vc-cookies-accepted",n=document.getElementById("client-cookies-notice"),b=document.getElementById("client-cookies-notice-button");if(!n||!b)return;function hide(){n.style.display="none";n.classList.remove("client-cookies-notice_open");}try{if(localStorage.getItem(k)){hide();return;}}catch(e){}b.addEventListener("click",function(){try{localStorage.setItem(k,"1");}catch(e){}hide();});})();</script><style id=burger-menu-fix>
 #burger-menu-59.burger-menu-is-open{visibility:visible!important;pointer-events:auto!important;animation:shiftTopOpen .3s forwards}
 #burger-menu-59.burger-menu-is-open .nh-burger-menu__links-item{opacity:1!important;transform:translateY(0)!important}
 #burger-menu-59 .nh-burger-menu__close-icon{background:transparent!important;padding:.75rem!important;right:.25rem!important;top:.25rem!important}
