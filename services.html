@@ -409,7 +409,20 @@
 #burger-menu-59.burger-menu-is-open .nh-burger-menu__links-item{opacity:1!important;transform:translateY(0)!important}
 #burger-menu-59 .nh-burger-menu__close-icon{background:transparent!important;padding:.75rem!important;right:.25rem!important;top:.25rem!important}
 body.burger-menu-open{overflow:hidden!important}
+</style><style id=site-layout-fix>
+body,html{overflow-x:hidden!important;max-width:100%!important}
+.site__layout{margin-top:-24px!important}
+#content-anchor:not(:has(.nh-carousel-fullscreen)){margin-top:0!important}
+#content-anchor:not(:has(.nh-carousel-fullscreen)) .widget__header[style*="padding-top"]{padding-top:40px!important}
+@media(min-width:832px){
+#content-anchor:has(.nh-carousel-fullscreen){margin-top:-100px!important}
+}
+@media(max-width:831px){
+.site__layout{margin-top:0!important}
+#content-anchor{margin-top:0!important}
+}
 </style>
+
 <script>(function () {
   var openBtn = document.getElementById('burger-menu-open-btn');
   var menu = document.getElementById('burger-menu-59');
