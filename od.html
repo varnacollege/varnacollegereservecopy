@@ -2023,38 +2023,38 @@
 <script>document.getElementById("client-cookies-notice-button").addEventListener("click",function(){document.getElementById("client-cookies-notice").style.display="none";});</script>
 <style>@media screen and (max-width:1023px){.site-header__burger--mobile{display:none!important}#main-menu{display:block!important}#main-menu .site-menu__list{display:block!important}.site-menu__item{display:block!important;width:100%!important}}</style>
 <style>
-/* Fix hero carousel without Swiper JS */
-.nh-carousel-fullscreen .swiper-wrapper {
-  display: block !important;
-  transform: none !important;
-  transition: none !important;
-  width: 100% !important;
-}
-.nh-carousel-fullscreen .swiper-slide {
-  display: none !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  flex-shrink: unset !important;
-}
-.nh-carousel-fullscreen .swiper-slide:first-child {
-  display: block !important;
-}
-.nh-carousel-fullscreen__content {
-  overflow: visible !important;
-  width: 100% !important;
-}
-.nh-carousel-fullscreen__item {
-  overflow: hidden !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-.nh-carousel-fullscreen__container {
-  width: 100% !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-}
-body, html {
-  overflow-x: hidden !important;
-  max-width: 100% !important;
-}
+body,html{overflow-x:hidden!important;max-width:100%!important}
+.nh-carousel-fullscreen__content{overflow:hidden!important;width:100%!important}
+.nh-carousel-fullscreen__container{width:100%!important;overflow:hidden!important;box-sizing:border-box!important}
+.nh-carousel-fullscreen__items{width:100%!important}
+.nh-carousel-fullscreen .swiper{overflow:hidden!important;width:100%!important}
+.nh-carousel-fullscreen .swiper-wrapper{display:flex!important;width:100%!important;transition:transform 0.4s ease!important}
+.nh-carousel-fullscreen .swiper-slide{flex-shrink:0!important;width:100%!important;box-sizing:border-box!important}
+.nh-carousel-fullscreen .swiper__dots{display:flex!important}
+.nh-carousel-fullscreen .swiper__arrow{display:none!important}
 </style>
+<script>
+(function(){
+  var wrappers = document.querySelectorAll('.nh-carousel-fullscreen .swiper-wrapper');
+  wrappers.forEach(function(wrapper){
+    var slides = wrapper.querySelectorAll('.swiper-slide');
+    if(slides.length < 2) return;
+    var dotsContainer = wrapper.closest('.nh-carousel-fullscreen__items, section')?.querySelector('.swiper-pagination');
+    var current = 0;
+    function go(n){
+      current = (n + slides.length) % slides.length;
+      wrapper.style.transform = 'translateX(-' + (current * 100) + '%)';
+      if(dotsContainer){
+        var bullets = dotsContainer.querySelectorAll('.swiper-pagination-bullet');
+        bullets.forEach(function(b,i){ b.classList.toggle('swiper-pagination-bullet-active', i===current); });
+      }
+    }
+    if(dotsContainer){
+      var bullets = dotsContainer.querySelectorAll('.swiper-pagination-bullet');
+      bullets.forEach(function(b,i){ b.style.cursor='pointer'; b.addEventListener('click',function(){ go(i); }); });
+    }
+    // Auto-advance every 5s
+    setInterval(function(){ go(current+1); }, 5000);
+  });
+})();
+</script>
