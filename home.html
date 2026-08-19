@@ -2009,4 +2009,27 @@
  <button id=client-cookies-notice-button class=client-cookies-notice__button>ОК</button>
  </div> 
  </div>
-<script>document.getElementById("client-cookies-notice-button").addEventListener("click",function(){document.getElementById("client-cookies-notice").style.display="none";});</script>
+<script>document.getElementById("client-cookies-notice-button").addEventListener("click",function(){document.getElementById("client-cookies-notice").style.display="none";});</script><script>
+(function(){
+  var burger = document.querySelector('.site-header__burger--mobile');
+  if (!burger) return;
+  burger.classList.remove('sf-hidden');
+  burger.style.cursor = 'pointer';
+  burger.innerHTML = '<div class="site-header__burger-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="4" width="24" height="2" fill="currentColor"/><rect y="11" width="24" height="2" fill="currentColor"/><rect y="18" width="24" height="2" fill="currentColor"/></svg></div>';
+  var nav = document.getElementById('main-menu');
+  var isOpen = false;
+  function applyState() {
+    if (window.innerWidth >= 1024) { nav.style.display = ''; }
+    else { nav.style.display = isOpen ? 'block' : 'none'; }
+  }
+  applyState();
+  window.addEventListener('resize', applyState);
+  burger.addEventListener('click', function() {
+    isOpen = !isOpen;
+    applyState();
+    burger.innerHTML = isOpen
+      ? '<div class="site-header__burger-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/><line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2"/></svg></div>'
+      : '<div class="site-header__burger-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="4" width="24" height="2" fill="currentColor"/><rect y="11" width="24" height="2" fill="currentColor"/><rect y="18" width="24" height="2" fill="currentColor"/></svg></div>';
+  });
+})();
+</script>
