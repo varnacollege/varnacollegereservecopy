@@ -3208,13 +3208,18 @@
 body.burger-menu-open{overflow:hidden!important}
 </style><style id=site-layout-fix>
 body,html{overflow-x:hidden!important;max-width:100%!important}
-.site__layout{margin-top:-24px!important}
+@media(min-width:832px){
+html:not(:has(.nh-carousel-fullscreen)){margin-top:-24px!important}
+html:has(.nh-carousel-fullscreen){margin-top:0!important}
+.site__layout:not(:has(.nh-carousel-fullscreen)){margin-top:0!important}
+.site__layout:has(.nh-carousel-fullscreen){margin-top:-24px!important}
 #content-anchor:not(:has(.nh-carousel-fullscreen)){margin-top:0!important}
 #content-anchor:not(:has(.nh-carousel-fullscreen)) .widget__header[style*="padding-top"]{padding-top:40px!important}
-@media(min-width:832px){
+#content-anchor:not(:has(.nh-carousel-fullscreen)) .module__content[style*="padding-top"]{padding-top:40px!important}
 #content-anchor:has(.nh-carousel-fullscreen){margin-top:-100px!important}
 }
 @media(max-width:831px){
+html{margin-top:0!important}
 .site__layout{margin-top:0!important}
 #content-anchor{margin-top:0!important}
 }
