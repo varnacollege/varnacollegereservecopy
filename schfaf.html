@@ -1383,7 +1383,7 @@
 body,html{overflow-x:hidden!important;max-width:100%!important}
 .nh-carousel-fullscreen .swiper{overflow:hidden!important;width:100%!important}
 .nh-carousel-fullscreen .swiper-wrapper{display:flex!important;width:100%!important;transform:translateX(0)!important;transition:transform 0.4s ease!important}
-.nh-carousel-fullscreen .swiper-slide{flex-shrink:0!important;width:100%!important;min-width:0!important;transform:none!important;opacity:1!important;transition:none!important;box-sizing:border-box!important}
+.nh-carousel-fullscreen .swiper-slide{flex-shrink:0!important;width:100%!important;min-width:0!important;transform:none!important;opacity:1!important;transition:none!important;box-sizing:border-box!important;min-height:100vh!important;padding-bottom:60px!important}
 .nh-carousel-fullscreen .swiper__dots{display:flex!important}
 </style>
 <script>
@@ -1410,7 +1410,7 @@ body,html{overflow-x:hidden!important;max-width:100%!important}
         b.addEventListener('click',function(){ go(i); });
       });
     }
-    go(0);
+    go(3);
     setInterval(function(){ go(current+1); }, 5000);
   });
 })();
